@@ -1,0 +1,8 @@
+{
+  "name": "comp2156-ci",
+  "version": "1.0.0",
+  "description": "CI test",
+  "scripts": {
+    "test": "echo \"Warning: No tests created yet.\""
+  }
+}
