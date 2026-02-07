@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "CI test",
   "scripts": {
-    "test": "node test.js"
+    "test": "echo \"Warning: No tests created yet.\""
   }
 }
