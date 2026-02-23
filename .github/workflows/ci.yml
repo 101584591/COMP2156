@@ -1,13 +1,14 @@
-name: CI
+name: Deploy SPA to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,4 +24,16 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test
+        run: npm test -- --watchAll=false
+
+      - name: Build the app
+        run: npm run build
+
+      - name: SPA 404 fallback
+        run: cp build/index.html build/404.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
