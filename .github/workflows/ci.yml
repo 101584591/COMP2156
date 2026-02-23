@@ -26,11 +26,9 @@ jobs:
       - name: Run tests
         run: npm test -- --watchAll=false
 
-      - name: Build the app
-        run: npm run build
+    
 
-      - name: SPA 404 fallback
-        run: cp build/index.html build/404.html
+  
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
