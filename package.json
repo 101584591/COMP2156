@@ -2,6 +2,7 @@
   "name": "comp2156",
   "version": "1.0.0",
   "scripts": {
-  "test": "echo \"No tests yet\" && exit 0",
-  "build": "echo \"Building project...\""
+    "test": "echo \"No tests yet\" && exit 0",
+    "build": "echo \"Building project...\""
+  }
 }
